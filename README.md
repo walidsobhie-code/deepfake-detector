@@ -171,3 +171,7 @@ If this helped your security team, please star the repo!
 ---
 
 **Built with ❤️ by [walidsobhie-code](https://github.com/walidsobhie-code)**
+
+## 🖥️ Demo Screenshot
+
+![Deepfake Detector Demo](deepfake-detector_test.png)
