@@ -2,8 +2,9 @@
 
 Detect AI-generated audio and video deepfakes. Protect against voice spoofing and face swap fraud.
 
-![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](Dockerfile)
 
 ## Why Deepfake Detection?
 
@@ -11,11 +12,12 @@ With AI deepfakes exploding, security is critical. Every company needs to verify
 
 ## ✨ Features
 
-- 🎙️ **Audio Detection** - Detect voice deepfakes
-- 🎭 **Video Detection** - Identify face swap fakes
-- 🔔 **Real-time API** - Flask API for integration
-- 📊 **Confidence Scores** - Detailed analysis
-- 🧠 **ML Models** - State-of-the-art classifiers
+- 🎙️ **Audio Detection** - Detect voice deepfakes using MFCC & spectral analysis
+- 🔊 **Feature Extraction** - MFCC, spectral centroid, chroma features
+- 📊 **Confidence Scores** - Detailed analysis with indicators
+- 🔔 **Batch Processing** - Analyze multiple files at once
+- 🌐 **Web UI** - Gradio interface for easy testing
+- 🐳 **Docker Ready** - Deploy anywhere with Docker
 
 ## 🚀 Quick Start
 
@@ -25,17 +27,25 @@ pip install -r requirements.txt
 # Detect audio deepfake
 python detector.py --input voice.wav --type audio
 
-# Start API
-python api.py
+# Batch analysis
+python detector.py --batch ./audio_samples/
+
+# Interactive mode
+python detector.py --interactive
 ```
 
-## 🛠️ Requirements
+## 🌐 Web UI
 
+```bash
+python gradio_app.py
+# Open http://localhost:7860
 ```
-torch>=2.0.0
-librosa>=0.10.0
-scikit-learn>=1.3.0
-flask>=3.0.0
+
+## 🐳 Docker
+
+```bash
+docker build -t deepfake-detector .
+docker run -p 7860:7860 deepfake-detector
 ```
 
 ## 📝 License
